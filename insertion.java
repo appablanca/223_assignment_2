@@ -1,38 +1,38 @@
-public class insertion {  
-    public static void Sort(int[] array) {  
-        int n = array.length;  
-        for (int j = 1; j < n; j++) {  
-            int key = array[j];  
-            int i = j-1;  
-            while ( (i > -1) && ( array [i] > key ) ) {  
-                array [i+1] = array [i];  
-                i--;  
-            }  
-            array[i+1] = key;  
-        }
-    } 
-    
-    public static void reverseSort(int[] array){
+import java.util.EnumSet;
 
-        for(int j = array.length - 2; j < 0;j--){
-            int temp;
-            int i = j+1;
-            while((i < array.length ) && (array[i] > array[i-1])){
-                temp = array[i];
-                array[i] = array[i-1];
-                array[i-1] = temp;
-                i++;
+public class insertion{
+    public static void sort(Comparable[] a){
+        int N = a.length;
+        for (int i = 1;  i < N; i++ ){
+            for (int j = i; j > 0 && less(a[j], a[j-1]); j--){
+                exch(a,j,j-1);
             }
         }
-
-
-
-
-
-
-
-
-
-
     }
+
+    public static void rsort(Comparable[] a){
+        int N = a.length;
+        for (int i = N-1; i > 0;i--){
+            for (int j = i; j < N && less(a[j-1], a[j]);j++){
+                exch(a, j-1, j);
+            }
+        }
+    }
+    public static boolean less(Comparable v, Comparable w){
+        return v.compareTo(w) < 0;
+    }
+
+    public static void exch(Comparable[] a, int i, int j){
+        Comparable t = a[i]; a[i] = a[j]; a[j] =t;
+    }
+
+    public static void show(Comparable[] a){
+        for(int i = 0; i < a.length;i++){
+            System.out.print(a[i] + " ");
+        }
+        System.out.println("");
+    }
+
+
+
 }
