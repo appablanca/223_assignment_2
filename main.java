@@ -1,18 +1,25 @@
 import java.util.*;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 import java.io.*;
 public class main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        String filename = sc.next();
-        int arr[] = ReadingFile.readFiles(filename);
+        //String filename = sc.next();
+        int arr[] = ReadingFile.readFiles("integers.txt");
         int n = arr.length;
         Integer[] sarr = new Integer[n];
         for(int i = 0; i < n; i++){
             sarr[i] = arr[i];
         }
-        System.out.println("Integers are reading from the " + filename + " file, the array is:");
+        System.out.println("Integers are reading from the " + "filename" + " file, the array is:");
        
         insertion.show(sarr);
+        Integer sarr3[] = new Integer[n];
+        for(int i = 0; i < n; i++){
+            sarr3[i] = arr[i];
+        }
   
         System.out.println("The array has been sorted in increasing order by using the insertion sort algorithm");
         insertion.sort(sarr);
@@ -28,15 +35,33 @@ public class main {
         System.out.println("");
 
         System.out.println("Doubles are reading from the doubles.txt file, the array is:");
-        int arr2[] = ReadingFile.readFiles("doubles.txt");
+        double arr2[] = ReadingFile.readFilesD("doubles.txt");
         int n2 = arr2.length;
-        Integer[] sarr2 = new Integer[n2];
-        for(int i = 0; i < n; i++){
+        Double[] sarr2 = new Double[n2];
+        for(int i = 0; i < n2; i++){
             sarr2[i] = arr2[i];
         }
         insertion.show(sarr2);
+        System.out.println("The array of double values has been sorted in increasing order by using the insertion sort algorithm:");
+        insertion.sort(sarr2);
+        insertion.show(sarr2);
+        System.out.println("Step 3 has been completed.");
+        System.out.println("");
+
+        System.out.println("The original array is:");
+        insertion.show(sarr3);
+        System.out.println("The array of integer values has been sorted in descending order by using the merge sort algorithm is:");
+        merge.sort(sarr3);
 
 
+
+
+
+
+
+
+
+        
         sc.close();
     }
     
