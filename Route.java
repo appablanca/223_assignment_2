@@ -13,6 +13,9 @@ public class Route implements Comparable<Route> {
         }else{return 0;}
     }
     
+    public String toString(){
+        return source +" "+ destination+"\n";
+    }
 
 
 

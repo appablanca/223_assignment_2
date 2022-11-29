@@ -61,8 +61,30 @@ public class main{
         quick.sort(sarr4);
         insertion.show(sarr4);
 
-
-
+        Route r0 = new Route("Ankara", "Istanbul");
+        Route r1 = new Route("Ankara", "Izmir");
+        Route r2 = new Route("Ankara", "Antalya");
+        Route r3 = new Route("Istanbul", "Ankara");
+        Route r4 = new Route("Istanbul", "Izmir");
+        Route r5 = new Route("Istanbul", "Antalya");
+        Route r6 = new Route("Antalya", "Ankara");
+        Route r7 = new Route("Antalya","Istanbul");
+        Route r8 = new Route("Izmir", "Ankara");
+        Route r9 = new Route("Izmir","Istanbul");
+        Route[] rsarr = new Route[10];
+        rsarr[0] = r0;
+        rsarr[1] = r1;
+        rsarr[2] = r2;
+        rsarr[3] = r3;
+        rsarr[4] = r4;
+        rsarr[5] = r5;
+        rsarr[6] = r6;
+        rsarr[7] = r7;
+        rsarr[8] = r8;
+        rsarr[9] = r9;
+        quick.sort(rsarr);
+        quick.rshow(rsarr);
+        System.out.println("Step 6 has been completed.");
 
 
 

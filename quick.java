@@ -53,6 +53,10 @@ public class quick {
         return v.compareTo(w) < 0;
     }
 
-
+    public static void rshow(Route[] a){
+        for(int i = 0; i < a.length;i++){
+            System.out.print(a[i]);
+        }
+    }
 
 }
